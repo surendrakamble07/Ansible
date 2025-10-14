@@ -30,6 +30,34 @@ It follows a **declarative approach** — you define *what* you want, not *how* 
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
 sudo apt install ansible -y
+
+
+## 🔑 Copying PEM Key from Local to EC2 Instance (Windows Example)
+
+If you’re using **Windows PowerShell**, and your `.pem` key is located in your **Downloads** folder,  
+use the following command to copy it securely to your EC2 instance:
+
+```powershell
+scp -i "C:\Users\<your-username>\Downloads\Ansible-master-key.pem" "C:\Users\<your-username>\Downloads\Ansible-master-key.pem" ubuntu@<EC2-PUBLIC-IP>:/home/ubuntu/
+✅ Explanation:
+
+-i → Path to your existing key (used for authentication).
+
+The second path → Your .pem file to be copied.
+
+The last path → Destination on your EC2 (/home/ubuntu/ is safe and writable).
+
+Once copied, SSH into your EC2 instance and secure the key:
+
+bash
+Copy code
+chmod 400 /home/ubuntu/Ansible-master-key.pem
+💡 Tip: If you want to keep keys organized, create a folder on EC2:
+
+bash
+Copy code
+mkdir -p /home/ubuntu/keys && mv /home/ubuntu/Ansible-master-key.pem /home/ubuntu/keys/
+chmod 400 /home/ubuntu/keys/Ansible-master-key.pem
 Configure Inventory File
 bash
 Copy code
