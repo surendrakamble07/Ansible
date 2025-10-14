@@ -125,5 +125,5 @@ Copy code
 Made with ❤️ for DevOps enthusiasts.
 Train with passion. Automate with confidence. 🚀
 
-Author: Shubham — Train With Shubham (Junoon Batch 9)
+
 Compiled by: Surendra Kamble
