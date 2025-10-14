@@ -32,7 +32,7 @@ sudo apt update
 sudo apt install ansible -y
 
 
-## 🔑 Copying PEM Key from Local to EC2 Instance (Windows Example)
+# 🔑 Copying PEM Key from Local to EC2 Instance (Windows Example)
 
 If you’re using **Windows PowerShell**, and your `.pem` key is located in your **Downloads** folder,  
 use the following command to copy it securely to your EC2 instance:
